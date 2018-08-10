@@ -8,7 +8,7 @@
 
 ## Installation
 
-This demo is demonstrating how to integrate Apisentris to your application.
+This demo is demonstrating how to integrate [Apisentris](https://apisentris.com/dashboard/connections/new) to your application.
 
 ### Demo using JQuery
 
@@ -25,4 +25,4 @@ This demo is demonstrating how to integrate Apisentris to your application.
 
 ## Note
 
-This demo is using demo connection that's provided on the Apisentris dashboard.
+This demo is using demo connection that's provided on the [Apisentris](https://apisentris.com/dashboard/connections/new) dashboard.
