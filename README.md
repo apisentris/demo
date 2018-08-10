@@ -14,6 +14,7 @@ This demo is demonstrating how to integrate [Apisentris](https://apisentris.com)
 
 - Clone / download the source
 - Open `jquery/index.html` on your browser of choice
+- or check <strong>[live demo](http://absyah.com/apisentris/demo/jquery/index.html)</strong>
 
 ### Demo with Andoroid Application
 
