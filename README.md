@@ -8,7 +8,7 @@
 
 ## Installation
 
-This demo is demonstrating how to integrate [Apisentris](https://apisentris.com/dashboard/connections/new) to your application.
+This demo is demonstrating how to integrate [Apisentris](https://apisentris.com) to your application.
 
 ### Demo using JQuery
 
