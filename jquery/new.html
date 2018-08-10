@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apisentris Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        New Programmer | <a href="index.html">Back</a>
+      </h1>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="email" placeholder="Email" name="email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input class="input" type="text" placeholder="First Name" name="firstname">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input class="input" type="text" placeholder="Last Name" name="lastname">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-success" id="create-record-btn">
+            Create
+          </button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function() {
+        $('#create-record-btn').click(function() {
+            var email     = $('input[name="email"]').val();
+            var firstname = $('input[name="firstname"]').val();
+            var lastname  = $('input[name="lastname"]').val();
+            var request   = {
+                resource: {
+                    email: email,
+                    firstname: firstname,
+                    lastname: lastname
+                }
+            }
+
+            console.log(request);
+            // do ajax post
+            $.ajax({
+                url: "https://apisentris.com/api/v1/programmers",
+                data: JSON.stringify(request),
+                dataType: 'json',
+                type: "POST",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('client_id', '12000');
+                    xhr.setRequestHeader('access_token', 'dhxjIWAMYp-aYWpNfVkGPA');
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                },
+                success: function(response) {
+                    window.location.replace('index.html')
+                }
+            });
+        });
+    });
+  </script>
+  </body>
+</html>

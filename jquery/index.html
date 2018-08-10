@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apisentris Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Programmers | <a href="new.html">New</a>
+      </h1>
+      <table class="table is-fullwidth" id="records-table">
+        <tr>
+          <th>ID</th>
+          <th><abbr>Email</abbr></th>
+          <th><abbr>First Name</abbr></th>
+          <th><abbr>Last Name</abbr></th>
+          <th><abbr>Action</abbr></th>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function() {
+        // render list
+        $.ajax({
+            url: "https://apisentris.com/api/v1/programmers",
+            type: "GET",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('client_id', '12000');
+                xhr.setRequestHeader('access_token', 'dhxjIWAMYp-aYWpNfVkGPA');
+                xhr.setRequestHeader('Content-Type', 'application/json');
+            },
+            success: function(response) {
+                $.each(response, function(i, programmer) {
+                      $('<tr id=row-' + programmer.id + '>').append(
+                      $('<td>').text(programmer.id),
+                      $('<td>').text(programmer.email),
+                      $('<td>').text(programmer.firstname),
+                      $('<td>').text(programmer.lastname),
+                      $('<td data-programmer-id="' + programmer.id + '">').text('')
+                    ).appendTo('#records-table').html();
+
+                    // create link to update
+                    $('*[data-programmer-id='+ programmer.id +']')
+                      .html('<a href="edit.html?id='+ programmer.id +'">Edit</a>')
+                      .append('<a class="delete-record" data-programmer-id='+ programmer.id +'> Delete</a>');
+
+                });
+
+                // assign delete link
+                $('.delete-record').on('click', function() {
+                    var programmerId = $(this).attr("data-programmer-id");
+                    var endpoint     = 'https://apisentris.com/api/v1/programmers/' + programmerId;
+
+                    // remove from row
+                    $('#row-' + programmerId).remove();
+                    
+                    // do ajax delete
+                    $.ajax({
+                        url: endpoint,
+                        dataType: 'json',
+                        type: "DELETE",
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader('client_id', '12000');
+                            xhr.setRequestHeader('access_token', 'dhxjIWAMYp-aYWpNfVkGPA');
+                            xhr.setRequestHeader('Content-Type', 'application/json');
+                        },
+                        success: function(response) {
+                            console.log('Record was successfully deleted.')
+                        }
+                    });
+                });
+            }
+        });
+    });
+
+  </script>
+  </body>
+</html>
