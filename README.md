@@ -16,6 +16,13 @@ This demo is demonstrating how to integrate [Apisentris](https://apisentris.com)
 - Open `jquery/index.html` on your browser of choice
 - or check <strong>[live demo](http://absyah.com/apisentris/demo/jquery/index.html)</strong>
 
+### Demo using React (login scenario)
+
+- Clone / download the source
+- Go to `/react` directory
+- Run `npm install` then `npm start`
+- Open http://localhost:3000 on your browser of choice
+
 ### Demo with Andoroid Application
 
 - Coming soon
