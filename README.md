@@ -14,7 +14,7 @@ This demo is demonstrating how to integrate [Apisentris](https://apisentris.com)
 
 - Clone / download the source
 - Open `jquery/index.html` on your browser of choice
-- or check <strong>[live demo](http://absyah.com/apisentris/demo/jquery/index.html)</strong>
+- or check <strong>[live demo](https://lucid-albattani-b91b35.netlify.com/)</strong>
 
 ### Demo using React (login scenario)
 
