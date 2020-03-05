@@ -29,8 +29,8 @@ class App extends Component {
             data: JSON.stringify(request),
             dataType: "json",
             beforeSend: function(xhr){
-                xhr.setRequestHeader('client_id', '12000');
-                xhr.setRequestHeader('access_token', 'dhxjIWAMYp-aYWpNfVkGPA');
+                xhr.setRequestHeader('client_id', '224000');
+                xhr.setRequestHeader('access_token', 'w_KDrRt_9H3KrwZgRcZing');
                 xhr.setRequestHeader('Content-Type', 'application/json');
             },
             success: function (result) {
@@ -52,8 +52,8 @@ class App extends Component {
             type: "GET",
             beforeSend: function(xhr){
                 xhr.setRequestHeader('Authorization', token),
-                xhr.setRequestHeader('client_id', '12000');
-                xhr.setRequestHeader('access_token', 'dhxjIWAMYp-aYWpNfVkGPA');
+                xhr.setRequestHeader('client_id', '224000');
+                xhr.setRequestHeader('access_token', 'w_KDrRt_9H3KrwZgRcZing');
                 xhr.setRequestHeader('Content-Type', 'application/json');
             },
             context: this, // Allows us to use this.setState inside success
