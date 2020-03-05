@@ -39,18 +39,18 @@
             },
             success: function(response) {
                 $.each(response, function(i, programmer) {
-                      $('<tr id=row-' + programmer.id + '>').append(
-                      $('<td>').text(programmer.id),
+                      $('<tr id=row-' + programmer._id.$oid + '>').append(
+                      $('<td>').text(programmer._id.$oid),
                       $('<td>').text(programmer.email),
                       $('<td>').text(programmer.firstname),
                       $('<td>').text(programmer.lastname),
-                      $('<td data-programmer-id="' + programmer.id + '">').text('')
+                      $('<td data-programmer-id="' + programmer._id.$oid + '">').text('')
                     ).appendTo('#records-table').html();
 
                     // create link to update
-                    $('*[data-programmer-id='+ programmer.id +']')
-                      .html('<a href="edit.html?id='+ programmer.id +'">Edit</a>')
-                      .append('<a class="delete-record" data-programmer-id='+ programmer.id +'> Delete</a>');
+                    $('*[data-programmer-id='+ programmer._id.$oid +']')
+                      .html('<a href="edit.html?id='+ programmer._id.$oid +'">Edit</a>')
+                      .append('<a class="delete-record" data-programmer-id='+ programmer._id.$oid +'> Delete</a>');
 
                 });
 
