@@ -47,6 +47,7 @@
                       $('<td data-programmer-id="' + programmer._id.$oid + '">').text('')
                     ).appendTo('#records-table').html();
 
+                    console.log(programmer);
                     // create link to update
                     $('*[data-programmer-id='+ programmer._id.$oid +']')
                       .html('<a href="edit.html?id='+ programmer._id.$oid +'">Edit</a>')
