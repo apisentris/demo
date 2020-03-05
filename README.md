@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://apisentris.com/assets/icon-small2-6d8746401ecb7c09475ed02c0c70d52328cf0f147e23f321437ea7c1f5141e70.png">
+  <img src="https://apisentris.com/assets/logo_apisentris_small-f0138783f278c565389ceb0c3bb9fb04b487a6994122185fbbe278736264c039.png">
 </p>
 
 <p align="center">
@@ -14,7 +14,8 @@ This demo is demonstrating how to integrate [Apisentris](https://apisentris.com)
 
 - Clone / download the source
 - Open `jquery/index.html` on your browser of choice
-- or check <strong>[live demo](https://lucid-albattani-b91b35.netlify.com/)</strong>
+- or check <strong>[live demo](https://lucid-albattani-b91b35.netlify.com/jquery)</strong>
+- Tutorial: [Medium](https://medium.com/@absyah/create-a-dynamic-website-without-backend-using-apisentris-9a7ee61581dc)
 
 ### Demo using React (login scenario)
 
